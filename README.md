@@ -7,7 +7,6 @@
             ##2.装载器（css，sass，jsx等等）。  它可以拥有很多的加载器，那么我们需要用css的话，我们需要借助，一些loader，style-loader把你的css静态文件进行模块化。还有就是sass文件，jsx文件等等。
             ##3.智能解析（require("./template/"+names+".esj"))。智能解析的话，其实就是，当你引入模块的化，你就可以使用require甚至你可以改变文件的对应的名字，然后拼接文件的尾缀，就可以了。
 
-
             ##装载器的案例，比如说我们想将css模块化的话，我们需要是用两个东西，一个是css-loader，将你当前的css文件进行模块化，另外一个是，style-loader将你当前模块化的文件，可以让你当前的文件结构识别出来，你当前使用的是css。
             ##你还可以使用Sass&Less装载器。jsx装载器能帮助把jsx文件转化为js 文件。
             ##Babel装载器，Babel装载器能帮我们做什么呢？能将ES6的语法转换成ES5，将一些其他的脚本的语言的语法，转换成，我们浏览器可以识别的。比如TypeScript，Coffee，EJS，Pug，Handlebars，json，我们都可以通过对应的装载器，将其进行模块化。
