@@ -1,5 +1,7 @@
 ##webpack是什么?以及能够给前端开发人员能做什么？
+
     ##1.模块化
+
         ##主要就是模块化，
         ##也就是当你整个项目都完成的时候，
         ##你可以将整个项目进行模块化，模块化的文件，
@@ -16,6 +18,7 @@
         ##webpack可以将静态文件模块化，
         ##但是你将一些静态文件或者是一些第三方的文件进行模块化过程当中，
         ##你需要借助一些插件，或者加载器。
+
         ##webpck的优势：
             ##1.代码分离。   
                 ##每一个模块或者说每个文件都有它自己的功能。
@@ -45,5 +48,61 @@
                 ##将一些其他的脚本的语言的语法，转换成，
                 ##我们浏览器可以识别的。
                 ##比如TypeScript，Coffee，EJS，Pug，Handlebars，json，
- 
+                ##我们都可以通过对应的装载器，将其进行模块化。
+    ##2.自定义文件或npm install
+    ##3.静态文件模块化
+    ##4.借助插件和加载器
+
+##安裝webpack 
+    ##npm install -g webpack
+    ##npm install webpack-dev-server
+        ###其实它是给我们准备一个服务器，并且，
+        ###实时监听我们里面代码的状况
+
+##webpack当中的流程
+
+    ##第一步：
+    ##cats.js
+        ###var cat = ['dave','henry','marta']
+        ###module.exports = cats;
+    ##上面是一个cats数组，我们在app.js使用它，
+    ##就需要在app.js中使用require将它引入，如下：
+    ##app.js 
+        ###var cats = require('./cats.js'); 
+        ###console.log('cats');
+    ##我们可以，module.exports一个数组，一个对象，一个number等等。
+    ##我们还可以让他返回一个方法，function等等，都可以。
+    ##第二步：
+    ##当你使用webpack的时候，它可以帮助我们将，
+    ##这些文件，弄到一个出口文件里面来，叫bundle.js
+    ##在我们bundle.js里面就有我们引入的那些文件。
+    ##大部分文件是看不懂的，这个没关系，我们只需要引入即可。
+##webpackdemo
+    ##1.安装全局webpack
+        ###npm install -g webpack  回车
+    ##2.创建一个文件夹，webpack-my-app
+    ##3.终端进入webpack-my-app，输入npm init 
+        ###可以直接一直按回车，或者直接输入webpack init -y
+        ###也可以webpack init 后对应的东西就可以了
+        ###这里在description：引用于webpack
+        ###回车
+        ###keywork:webpack 打包工具 webapck-dev-server  
+        ###keywork是可以不写的，这里只不过是记录一下
+        ###author：xieerduos
+        ###Is this ok?ok 回车
+        ##可能的错误，那需要安装一下npm install -g webpack-cli 再重复上面的操作，如果没有错误继续往下。
+        ###之后在你的项目webpack-my-app下面有一个package.json的文件
+    ##4.在vscode中打开webapck-my-demo文件夹
+    ##5.创建index.html
+    ##6.写对应的结构，和写入一下内容
+        ###<title>webapck</title>
+        ###<script src="./dist/main.js"></script>
+    ##7.在webapck-my-demo文件夹下，创建一个app.js
+        ###内容为alert("Hello Everyone)
+    ##8.回到终端，输入
+    ##9.webpack app.js 
+        ###自动在当前目录下创建一个dist文件夹，
+        ###下面有一个main.js就是打包好的.js文件，也是出口文件
+
+    ##10.在浏览器中打开index.html文件，
 
